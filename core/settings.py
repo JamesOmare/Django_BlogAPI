@@ -130,15 +130,18 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Permissions: AllowAny, IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny'
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly'
     ]
 }
+
+
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     
-]
+] 
